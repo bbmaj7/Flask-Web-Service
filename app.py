@@ -5,13 +5,21 @@ from flask import request
 app = Flask(__name__)
 
 empDB = [{
-    'id': '101',
-    'name': 'Mr.Jarjit S',
-    'title': 'React JS Developer'
+    'id': '51020211',
+    'name': 'Setia Budi',
+    'title': 'Back-End Developer'
 }, {
-    'id': '102',
-    'name': 'Drs.Bernard',
-    'title': 'Data Scientist'
+    'id': '51020212',
+    'name': 'Sherly Nefriza',
+    'title': 'UI & UX Designer'
+}, {
+    'id': '61020213',
+    'name': 'Septian Amanda',
+    'title': 'Photographer'
+}, {
+    'id': '61020214',
+    'name': 'Jovian Fraaije',
+    'title': 'Producer'
 }]
 
 
@@ -51,7 +59,7 @@ def createEmp():
     return jsonify(dat)
 
 
-@app.route('/empdb/employee/', methods=['DELETE'])
+@app.route('/empdb/employee/<empId>', methods=['DELETE'])
 def deleteEmp(empId):
     em = [emp for emp in empDB if (emp['id'] == empId)]
 
